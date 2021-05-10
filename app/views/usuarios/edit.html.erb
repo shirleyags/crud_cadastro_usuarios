@@ -1,0 +1,64 @@
+<br> 
+<br>
+<%=form_for(@usuario) do |f| %>
+
+<% if @usuario.errors.any? %>
+	<div class="alert alert-danger">
+		<ul>
+			<% @usuario.errors.full_messages.each do |mensagem| %>
+				<li><%= mensagem %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+	<form class="form-horizontal">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Editar dados do usuário</h3>
+		</div>
+		<br> 
+	</div>
+
+	<div class="panel-body">
+		<div class="form-group">
+			<label for="#" class="col-sm-2 control-label"><%= f.label :Nome %></label>
+			<div class="col-sm-4">
+			<%= f.text_field :nome, class:"form-control" %>
+			</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label"><%= f.label :Idade %></label>
+		<div class="col-sm-2">
+		<%= f.number_field :idade, class:"form-control" %>
+		</div>
+	</div>
+
+<div class="form-group">
+		<label class="col-sm-2 control-label"><%= f.label :CPF %></label>
+<div class="col-sm-2">
+<%= f.text_field :cpf, 'data-mask': '000.000.000-00', class:"form-control" %>
+</div>
+</div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><%= f.label :Gênero %></label>
+                <div class="col-sm-2">
+                    <%= f.collection_select :genero_id, Genero.all, :id, :opcoesg, class:"form-control" %>  
+                </div>
+            </div>
+
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary">Salvar</button>
+					<button type="button" class="btn btn-warning"><%= link_to "Voltar", usuarios_path%></button>
+
+				</div>
+
+			</div>
+		</div>
+
+	</form>
+    <%end%>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Total IP</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-dark" style="background-color: #7a297a">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Total IP</a>
+    <a class="nav-item nav-link" ><%= link_to 'Cadastrar Novo usuário', new_usuario_path %></a>
+  </div>
+  </nav>
+
+
+  <%= yield %>
+  </body>
+</html>

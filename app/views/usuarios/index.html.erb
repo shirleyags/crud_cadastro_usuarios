@@ -1,0 +1,27 @@
+
+ <br> 
+ <br> 
+<table class="table">
+<thead class="thead-dark">
+
+  <tr>
+    <th scope="col">Status</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Idade</th>
+    <th scope="col">Gênero</th>
+    <th scope="col">CPF</th>
+  </tr>
+</thead>
+<tbody>
+    <% @usuarios.each do |usuario| %>
+    <tr>
+        <th scope="row">Ativo</th>
+        <td><%= link_to usuario.nome, usuario %></td>
+        <td><%= usuario.idade %></td>
+        <td><%= usuario.genero.opcoesg %></td>
+        <td><%= usuario.cpf %></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
+

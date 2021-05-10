@@ -1,0 +1,28 @@
+<br> 
+<br>
+
+<ul class="list-group">
+
+<a href="#" class="list-group-item list-group-item-dark">Usuário Selecionado</a>
+
+  <li class="list-group-item list-group-item-action"><span class="badge badge-primary badge-pill">NOME</span>  <%= @usuario.nome%></li>
+  <li class="list-group-item list-group-item-action"><span class="badge badge-primary badge-pill">IDADE</span> <%= @usuario.idade%></li>
+  <li class="list-group-item list-group-item-action"><span class="badge badge-primary badge-pill">GÊNERO</span> <%= @usuario.genero.opcoesg%> </li>
+  <li class="list-group-item list-group-item-action"><span class="badge badge-primary badge-pill">CPF</span> <%=@usuario.cpf%></li>
+
+</ul>
+<br> 
+<br>
+
+
+<button type="button" class="btn btn-success"><%= link_to "Usuários", usuarios_path%></button>
+<button type="button" class="btn btn-warning"><%= link_to "Editar dados", edit_usuario_path(@usuario)%></button>
+<button type="button" class="btn btn-danger"><%= link_to "Deletar usuário", usuario_path(@usuario), method: :delete, data:{confirm: "Deseja deletar esta receita?"} %></button>
+
+
+
+
+
+
+
+
